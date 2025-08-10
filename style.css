@@ -39,6 +39,13 @@
     html{
       scroll-behavior: smooth;
     }
+    html, body {
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
     * {
       margin: 0;
       padding: 0;
