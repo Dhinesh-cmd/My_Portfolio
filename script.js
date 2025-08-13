@@ -27,17 +27,13 @@ window.addEventListener("DOMContentLoaded", () => {
         localStorage.setItem("theme", "light");
         icon.classList.remove("fa-sun");
         icon.classList.add("fa-moon");
-        databaseImg.src = 'img/database-imgLight.png';
-        backendImg.src = 'img/backend-imgLight.png';
-        frontendImg.src = 'img/frontend-imgLight.png'
-      } else {
+      } 
+      else {
         html.setAttribute("data-theme", "dark");
         localStorage.setItem("theme", "dark");
         icon.classList.remove("fa-moon");
         icon.classList.add("fa-sun");
-        databaseImg.src = 'img/Database-img.jpg';
-        backendImg.src = 'img/backend-icon.png';
-        frontendImg.src = 'img/Frontend-icon.png'
+        
       }
     }
 
@@ -171,12 +167,85 @@ function msgValidation() {
 }
 
 function showSuccessPopup() {
+  const submitBtn = document.getElementById('form-submit-btn');
+  submitBtn.textContent = 'Sending...'
   const popup = document.getElementById('popup');
-  popup.style.display = 'block';
-  setTimeout(() => {
-    popup.style.display = 'none';
-  }, 3000);
+setTimeout(() => {
+    popup.style.display = 'block';
+    submitBtn.textContent = 'Sent';
+    // Step 4: After 3s from "Sent" → hide popup & reset button
+    setTimeout(() => {
+      popup.style.display = 'none';
+      submitBtn.textContent = 'Send Message';
+    }, 3000);
+
+  }, 2000);
 }
-// Select elements
-// JS
+
+// Nav bar 
+
+function menuBar() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('open');
+}
+
+// Close menu on link click
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('open');
+  });
+});
+
+// Remove 'open' when resizing above 540px
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 700) {
+    document.querySelector('.nav-links').classList.remove('open');
+  }
+});
+
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-link");
+let sectionPositions = [];
+
+// Store section positions
+function updateSectionPositions() {
+  sectionPositions = Array.from(sections).map(sec => ({
+    id: sec.id,
+    top: sec.offsetTop,
+    bottom: sec.offsetTop + sec.offsetHeight
+  }));
+}
+
+// Run this on load and resize
+window.addEventListener("load", updateSectionPositions);
+window.addEventListener("resize", updateSectionPositions);
+
+function scrollSpy() {
+  const scrollPos = window.scrollY + window.innerHeight / 2;
+
+  let current = "";
+  for (const sec of sectionPositions) {
+    if (scrollPos >= sec.top && scrollPos < sec.bottom) {
+      current = sec.id;
+      break;
+    }
+  }
+
+  navLinks.forEach(link => {
+    link.classList.toggle("active", link.getAttribute("href") === `#${current}`);
+  });
+}
+
+// Throttle scroll updates
+let ticking = false;
+window.addEventListener("scroll", () => {
+  if (!ticking) {
+    requestAnimationFrame(() => {
+      scrollSpy();
+      ticking = false;
+    });
+    ticking = true;
+  }
+});
+
 

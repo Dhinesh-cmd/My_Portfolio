@@ -16,21 +16,22 @@
     <div class="navbar" data-aos="fade-down">
       <div class="logo" id="logo">D</div>
       <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#what-i-do">Skills</a>
-        <a href="#about">About</a>
-        <a href="#project">Projects</a>
-        <a href="#contact">Contact</a>
+        <a href="#home" class="nav-link"> Home</a>
+        <a href="#skills" class="nav-link"> Skills</a>
+        <a href="#about" class="nav-link"> About</a>
+        <a href="#project" class="nav-link">Projects</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
       <div class="bar">
         <span class="toggle-theme" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
           <i class="fas fa-sun" id="themeIcon"></i></span>
-        <span class="fa-solid fa-bars" onclick="toogleMenu()"></span>
+        <span class="fa-solid fa-bars" id="menuIcon" onclick="menuBar()"></span>
       </div>
     </div>
 
     <!-- Main Section -->
-     <h1 id="home">.</h1>
+     <section id="home">
+     <h1>.</h1>
     <div class="main-content">
       <!-- Left: Hero Text -->
       <div class="hero" data-aos="fade-up">
@@ -38,15 +39,15 @@
         <h1>Dhinesh,</h1>
         <h2>Full Stack Developer</h2>
         <p>
-          A passionate <span class="span">Java - Full Stack Developer</span> who loves building tech that makes life easier.
+          A passionate <span class="span">Java - Full Stack Developer</span> who loves building tech that makes life easier.  </p>
         <div class="buttons">
-          <a href="#project" class="btn">Projects </a>
+          <a href="#project" class="btn">View My Work <i class="fa-solid fa-angles-down"></i> </a>
          <a href="Resume/DhineshT_Resume.pdf" download class="btn"> Get Resume <i class="fa-solid fa-circle-arrow-down"></i></a>
         </div>
       </div>
 
       <!-- Center: Profile Image -->
-      <img class="profile-img" src="img/WhatsApp Image 2025-07-15 at 18.42.07_e8574ad5.jpg" alt="Dhinesh Profile"  data-aos="zoom-in"/>
+      <img class="profile-img" src="img/Profile-dp.jpg" alt="Dhinesh Profile"  data-aos="zoom-in"/>
 
       <!-- Right: Social Icons -->
       <div class="social-icons">
@@ -62,64 +63,131 @@
     Scroll Down
      <i class="fas fa-angle-down"></i>
     </div>
+    </section>
   </div>
-   <!-- What I Do Section -->
-<section class="what-i-do" id="what-i-do">
-  <h2 class="section-heading">What I do?</h2>
-  <div class="services-new">
-    <div class="service-block" data-aos="zoom-in-up">
-      <div class="service">
-        <img src="img/Frontend-icon.png" alt="Front-end" class="service-img-1" id="frontend-img">
-        <p>FRONTEND</p>
-      </div>
-      <div class="skills-col">
-        <div class="skill"><span>></span>HTML 5</div>
-        <div class="skill"><span>></span>CSS 3</div>
-        <div class="skill"><span id="about">></span>JavaScript</div>
-      </div>
-    </div>
+   <!--skills -->
+<section class="skills-section" id="skills">
+    <h2>Skills & Technologies</h2>
+    <div class="underline"></div>
 
-    <div class="service-block" data-aos="zoom-in-up">
-      <div class="service">
-        <img src="img/backend-icon.png" alt="Front-end" class="service-img-2" id="backend-img">
-        <p>BACKEND</p>
-      </div>
-      <div class="skills-col">
-        <div class="skill"><span>></span>Java</div>
-        <div class="skill"><span>></span>Spring Boot</div>
-      </div>
-    </div>
+    <div class="skills-container">
+        <!-- Frontend -->
+        <div class="skill-card">
+            <div class="skill-icon frontend-icon">
+                <i class="fa-solid fa-globe"></i>
+            </div>
+            <h3>Frontend</h3>
+            <div class="tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Java Script</span>
+            </div>
+        </div>
 
-    <div class="service-block" data-aos="zoom-in-up">
-      <div class="service">
-        <img src="img/Database-img.jpg" alt="Front-end" class="service-img-3" id="database-img">
-        <p>DATABASE</p>
-      </div>
-      <div class="skills-col">
-        <div class="skill"><span >></span>MySQL</div>
-      </div>
+        <!-- Backend -->
+        <div class="skill-card">
+            <div class="skill-icon backend-icon">
+                <i class="fa-solid fa-gear"></i>
+            </div>
+            <h3>Backend</h3>
+            <div class="tags">
+                <span class="tag">Java</span>
+                <span class="tag">Spring Boot</span>
+                <span class="tag">Rest Apis</span>
+            </div>
+        </div>
+
+        <!-- Database & Tools -->
+        <div class="skill-card">
+            <div class="skill-icon database-icon">
+                <i class="fa-solid fa-database"></i>
+            </div>
+            <h3>Database and Tools</h3>
+            <div class="tags">
+                <span class="tag">MySQL</span>
+                <span class="tag">Git</span>
+                <span class="tag">VsCode</span>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
+
 <!-- About -->
- <main class="about">
+ <section id="about">
+ <main class="about" id="about">
   <div class="abt-left" data-aos="fade-right">
   <h2 class="abt-me">About Me</h2>
   <div class="abt-passion">
   <i class="fa-regular fa-heart" id="heart-icon"></i><span class="abt-passion-span">Passion</span>
   <p>"I love building tech that makes life easier — from healthcare tools to smart home solutions!"</p>
   </div>
-  <p class="abt-p1">I'm a Certified Java Full-Stack Developer from SLA Institute, Chennai, with an IBM Certification. I enjoy building the logical and functional aspects of modern web applications.</p>
+  <p class="abt-p1">I'm doing a Java Full-Stack Developement course in SLA Institute, Chennai, with an IBM Certification. I enjoy building the logical and functional aspects of modern web applications.</p>
   <p class="abt-p2">Building clean, efficient, and scalable solutions with a problem-solving mindset, focusing on performance and continuous improvement.</p>
   <p class="abt-p4">I am open to exciting opportunities where I can grow and contribute effectively. I’m flexible with working hours and comfortable working from different locations as needed. With a positive attitude and willingness to adapt, I’m ready to take on new challenges in a dynamic environment.</p>
   <p class="abt-p3"><i class="fa-solid fa-location-dot"></i><strong> Location - </strong>Chennai, India</p>
   </div>
   <div class="abt-right-img">
-    <img src="img/About-img.jpeg" alt="abt-img" data-aos="zoom-in-left">
+    <!-- <img src="img/About-img.jpeg" alt="abt-img" data-aos="zoom-in-left"> -->
+     <div class="abt-right-head">
+      <i class="fa-brands fa-reddit"></i>
+     <h2>Hobbies</h2></div>
+     <div class="abt-hobbies">
+      <h3>Cooking</h3>
+      <h3>Workout</h3>
+      <h3>Sports</h3>
+     </div>
   </div>
  </main>
 
- <!-- Education timeline -->
+ <!-- Education -->
+  <div class="milestones-section" data-aos="fade-up">
+    <header class="milestones-header" data-aos="fade-in">
+        <p style="color: var(--accent);">MY JOURNEY</p>
+        <h2>Education & Training</h2>
+        <p>A journey through my academic and professional development.</p>
+    </header>
+
+    <div class="timeline">
+        <div class="timeline-line"></div>
+
+        <div class="timeline-item left" data-aos="fade-left">
+            <div class="content">
+                <h3>Java Full Stack Developement</h3>
+                <h4>SLA IT Training Institute, K.K. Nagar, Chennai</h4>
+                <p class="date">July 2025 - Present</p>
+            </div>
+        </div>
+
+        <div class="timeline-item right" data-aos="fade-right">
+            <div class="content">
+                <h3>B.Sc. Biotechnology</h3>
+                <h4>SRM University, Kattankulathur, Chennai</h4>
+                <p class="date">2022 - 2025</p>
+                <p>CGPA: 7.00</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item left" data-aos="fade-left">
+            <div class="content">
+                <h3>12th Grade</h3>
+                <h4>Agathiya Matriculation Higher Secondary School, Kanchipuram</h4>
+                <p class="date">2021 - 2022</p>
+                <p>Percentage: 79.26%</p>
+            </div>
+        </div>
+        
+        <div class="timeline-item right" data-aos="fade-right">
+            <div class="content">
+                <h3>10th Grade</h3>
+                <h4>Agathiya Matriculation Higher Secondary School, Kanchipuram</h4>
+                <p class="date">2019 - 2020</p>
+                <p>Percentage: 70.17%</p>
+            </div>
+        </div>
+
+    </div>
+  </div>
+</section>
  <!--projects -->
   
    <section class="projects" id="project">
@@ -183,7 +251,7 @@
   <div class="contact-container">
     <!-- Left: Info Section -->
     <div class="contact-info">
-      <h2 class="contact-title">Contact On</h2>
+      <h2 class="contact-title">Let's Connect</h2>
       <p class="contact-description">
        Let's have a chat. I'm always open for future opportunities. And interested to build a new connection
       </p>
